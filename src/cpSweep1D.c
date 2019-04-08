@@ -21,7 +21,7 @@
 
 #include "chipmunk/chipmunk_private.h"
 
-static inline cpSpatialIndexClass *Klass();
+static inline cpSpatialIndexClass *Klass(void);
 
 //MARK: Basic Structures
 
@@ -232,7 +232,8 @@ cpSweep1DReindexQuery(cpSweep1D *sweep, cpSpatialIndexQueryFunc func, void *data
 	cpSpatialIndexCollideStatic((cpSpatialIndex *)sweep, sweep->spatialIndex.staticIndex, func, data);
 }
 
-static cpSpatialIndexClass klass = {
+static cpSpatialIndexClass klass =
+{
 	(cpSpatialIndexDestroyImpl)cpSweep1DDestroy,
 	
 	(cpSpatialIndexCountImpl)cpSweep1DCount,
@@ -250,5 +251,5 @@ static cpSpatialIndexClass klass = {
 	(cpSpatialIndexSegmentQueryImpl)cpSweep1DSegmentQuery,
 };
 
-static inline cpSpatialIndexClass *Klass(){return &klass;}
+static inline cpSpatialIndexClass *Klass(void){return &klass;}
 
