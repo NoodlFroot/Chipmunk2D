@@ -1807,7 +1807,6 @@
 					"-Wall",
 					"-W",
 					"-Wno-unused-parameter",
-					"-Werror",
 					"-Wnewline-eof",
 					"-Wreturn-type-c-linkage",
 				);
@@ -1871,7 +1870,6 @@
 					"-Wall",
 					"-W",
 					"-Wno-unused-parameter",
-					"-Werror",
 					"-Wnewline-eof",
 					"-Wreturn-type-c-linkage",
 				);
