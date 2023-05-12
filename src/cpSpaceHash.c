@@ -168,7 +168,7 @@ cpSpaceHashAllocTable(cpSpaceHash *hash, int numcells)
 	hash->table = (cpSpaceHashBin **)cpcalloc(numcells, sizeof(cpSpaceHashBin *));
 }
 
-static inline cpSpatialIndexClass *Klass();
+static inline cpSpatialIndexClass *Klass(void);
 
 cpSpatialIndex *
 cpSpaceHashInit(cpSpaceHash *hash, cpFloat celldim, int numcells, cpSpatialIndexBBFunc bbfunc, cpSpatialIndex *staticIndex)
@@ -588,7 +588,7 @@ static cpSpatialIndexClass klass = {
 	(cpSpatialIndexSegmentQueryImpl)cpSpaceHashSegmentQuery,
 };
 
-static inline cpSpatialIndexClass *Klass(){return &klass;}
+static inline cpSpatialIndexClass *Klass(void) { return &klass; }
 
 //MARK: Debug Drawing
 

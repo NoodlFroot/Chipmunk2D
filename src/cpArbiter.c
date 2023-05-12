@@ -230,10 +230,15 @@ cpArbiterSetUserData(cpArbiter *arb, cpDataPointer userData)
 void
 cpArbiterGetShapes(const cpArbiter *arb, cpShape **a, cpShape **b)
 {
-	if(arb->swapped){
-		(*a) = (cpShape *)arb->b, (*b) = (cpShape *)arb->a;
-	} else {
-		(*a) = (cpShape *)arb->a, (*b) = (cpShape *)arb->b;
+	if(arb->swapped)
+	{
+		(*a) = (cpShape *)arb->b;
+		(*b) = (cpShape *)arb->a;
+	}
+	else
+	{
+		(*a) = (cpShape *)arb->a;
+		(*b) = (cpShape *)arb->b;
 	}
 }
 

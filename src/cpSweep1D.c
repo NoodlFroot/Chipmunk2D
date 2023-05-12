@@ -21,7 +21,7 @@
 
 #include "chipmunk/chipmunk_private.h"
 
-static inline cpSpatialIndexClass *Klass();
+static inline cpSpatialIndexClass *Klass(void); // RAG: Added 'void' parameter to make it a prototype
 
 //MARK: Basic Structures
 
@@ -250,5 +250,5 @@ static cpSpatialIndexClass klass = {
 	(cpSpatialIndexSegmentQueryImpl)cpSweep1DSegmentQuery,
 };
 
-static inline cpSpatialIndexClass *Klass(){return &klass;}
+static inline cpSpatialIndexClass *Klass(void) { return &klass; }
 
